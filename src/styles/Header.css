@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Blaka&family=Comic+Neue:wght@300;400;700&family=Montserrat:wght@100;300;400;500;600;700;900&family=Permanent+Marker&display=swap');
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header .title{
+    font-size: 2.5rem;
+    font-family: 'Comic Neue', cursive;
+}

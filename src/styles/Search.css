@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Blaka&family=Comic+Neue:wght@300;400;700&family=Montserrat:wght@100;300;400;500;600;700;900&family=Permanent+Marker&display=swap');
+
+.search{
+    width: 90%;
+    margin: 2rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    
+
+}
+.input-wrapper{
+    position: relative;
+    width: 40%;
+    display: flex;
+    align-items: center;
+}
+.search input{
+    width: 100%;
+    padding: 1rem;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    box-shadow: 0 0 2px black;
+
+}
+/* Iconos */
+.icon{
+    font-size: 1.8rem;
+    cursor: pointer;
+
+}
+.search-icon{
+    color: #585858;
+    position: absolute;
+    right: 10px;
+}
+.add-icon{
+    font-size: 1.5rem;
+    color: white;
+    position: absolute;
+    right: 5px;
+    filter: drop-shadow(2px 2px 2px black);
+    
+}
+.btn-wrapper-search{
+    position: relative;
+    display: flex;
+    align-items: center;
+    
+}
+.btn-addNote{
+    font-family: 'Comic sans ms', cursive;
+    padding: 1rem;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding-right: 2.5rem;
+
+}
