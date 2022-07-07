@@ -9,20 +9,21 @@ const NoteList = ({ notes, handleAddNote, handleDeleteNote }) => {
 	<>
 		<div className="add-notes-wrapper">
 			<AddNote 
-				handleAddNote={handleAddNote}			
+				handleAddNote={handleAddNote}		
 			/>
 		</div>
-    <div className='notes-list'>
-			{notes.map((note => 
-				<Note 
-					key={note.id}
-					id={note.id}
-					text={note.text}
-					date={note.date}
-					handleDeleteNote={handleDeleteNote}
-				/>
-			))}     
-    </div>
+		<div className='notes-list'>
+				{notes.map((note => 
+					<Note 
+						key={note.id}
+						id={note.id}
+						title={note.title}
+						text={note.text}
+						date={note.date}
+						handleDeleteNote={handleDeleteNote}
+					/>
+				))}     
+		</div>
 	</>
   )
 }

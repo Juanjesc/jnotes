@@ -8,7 +8,9 @@ import Header from "./components/Header";
 const App = () => {
   const [notes, setNotes] = useState([]);
   const [searchText, setSearchText] = useState('');
-  const [darkMode, setDarkMode] = useState(false); //cambia el template de la app
+   const [darkMode, setDarkMode] = useState(false); //cambia el template de la app
+   //Se encarga de mostrar la nota para escribir 
+   const [showNote, setShowNote] = useState(true); //eslint-disable-line
   useEffect(() => {
     const saveNotes = JSON.parse(localStorage.getItem('notes-data'));
     if (saveNotes){
@@ -20,15 +22,16 @@ const App = () => {
     localStorage.setItem('notes-data', JSON.stringify(notes))
   },[notes])
 
-  const addNote = (text) => {
+  const addNote = (inputText, text) => { //ese text, es el texto úncamente del textArea
     const date = new Date();
     const newNote = {
       id: nanoid(),
+      title: inputText,
       text: text,
       date: date.toLocaleString()
       
     }
-    const newNotes = [...notes, newNote];
+    const newNotes = [newNote, ...notes];
     setNotes(newNotes)
   }
   const deleteNote = (id) => {
@@ -45,7 +48,10 @@ const App = () => {
       <Header 
         handleToggleTheme={setDarkMode}
       />
-      <Search handleSearchNote={setSearchText}/>
+      <Search 
+        handleSearchNote={setSearchText}
+        setShowNote={setShowNote}
+        />
       <NoteList 
         notes={notes.filter((noteText) => 
           noteText.text.toLowerCase().includes(searchText)

@@ -4,22 +4,27 @@ import { useState } from 'react'
 
 
 const AddNote = ({ handleAddNote }) => {
-	const [noteText, setNoteText] = useState('');
+	const [noteText, setNoteText] = useState(''); //texto del textarea
+	const [inputText, setInputText] = useState(''); //texto del input
 	const [classState, setClassState] = useState('note new');
-	//const limiteLetras = 200; //esto luego se quita
+
 	const handleChange = (event) => {
-		//if (limiteLetras - event.target.value.length >= 0){ //esta condición luego se quita, no interesa
-			setNoteText(event.target.value);
-		//}
+		setNoteText(event.target.value);
+	}
+	const handleChangeinput = (event) => {
+		console.log(event.target.value);
+		setInputText(event.target.value);
 	}
 	
 	const handleClick = () => {
-		if (noteText.trim().length > 0){ //comprueba que la nota tenga texto
-			handleAddNote(noteText)
+		if ((noteText.trim().length > 0) && (inputText.trim().length > 0)){ //comprueba que la nota tenga texto
+			console.log(noteText)
+			console.log(inputText)
+			handleAddNote(inputText, noteText)
+			setInputText('');
 			setNoteText('');
 			document.querySelector('.note.new').style.display='none';
 			document.querySelector('.notes-list').style.display='grid';
-			
 		}
 		else{
 			setClassState('note new shake-right')
@@ -31,10 +36,19 @@ const AddNote = ({ handleAddNote }) => {
 	const handleReturn = () => {
 		document.querySelector('.note.new').style.display='none';
 		document.querySelector('.notes-list').style.display='grid';
+		setNoteText('');
+		setInputText('');
 		
 	}
 	return (
 		<div className={classState}>
+			<input 
+				type="text" 
+				placeholder='Título de la nota, sé conciso'
+				className='inputAddNote'
+				value={inputText}
+				onChange={handleChangeinput}
+			/>
 			<textarea 
 				placeholder='¿Qué has aprendido hoy?'
 				value={noteText}

@@ -1,24 +1,24 @@
-import React, { useState } from 'react'
+//import React, { useState } from 'react'
 import {MdSearch, MdAdd} from 'react-icons/md'
 import '../styles/Search.css'
 
 
-const Search = ({ handleSearchNote }) => {
-	const [showNote, setShowNote] = useState(true)
+const Search = ({ handleSearchNote, setShowNote }) => {
+	// const [showNote, setShowNote] = useState(true)
 	const handleShowAddNote = () => {
 		/* En los estilos por defecto, addnotes tiene display none */
-		if (!showNote){ //Si es false oculta la nota
-			console.log(showNote)
-			document.querySelector('.note.new').style.display='none';
-			document.querySelector('.notes-list').style.display='grid';
-		}
-		else{ //Si es true muestra la nota
-			console.log(showNote)
+		if (setShowNote){ 
 			document.querySelector('.note.new').style.display='flex';
 			document.querySelector('.notes-list').style.display='none';
-			
 		}
-		setShowNote(!showNote)
+		/* Pendiente este bloque de código entre comentarios, de momento funciona la app y esto sobra */
+		// else{ //Si es true muestra la nota
+			
+		// 	document.querySelector('.note.new').style.display='flex';
+		// 	document.querySelector('.notes-list').style.display='none';
+			
+		// }
+	
 	}
   return (
 		<div className='search'>
