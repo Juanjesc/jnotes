@@ -38,19 +38,19 @@ const AddNote = ({ handleAddNote }) => {
 		document.querySelector('.notes-list').style.display='grid';
 		setNoteText('');
 		setInputText('');
-		
 	}
 	return (
 		<div className={classState}>
 			<input 
 				type="text" 
-				placeholder='Título de la nota, sé conciso'
+				placeholder='Título de la nota (max. 50 caracteres)'
 				className='inputAddNote'
 				value={inputText}
 				onChange={handleChangeinput}
+				maxLength={50}
 			/>
 			<textarea 
-				placeholder='¿Qué has aprendido hoy?'
+				placeholder='¿Qué quieres apuntar? Puedes arrastrar código'
 				value={noteText}
 				onChange={handleChange}>
 			</textarea>

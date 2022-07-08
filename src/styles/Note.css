@@ -1,13 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&display=swap');
 .note{
     background-color: #fef68a;
     margin-bottom: 10px;
     border-radius: 10px;
     padding: 1rem;
-    min-height: 150px;
+    min-height: 100px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     white-space: pre-wrap;
+    position: relative;
+    z-index: 1;
 }
 
 .note-footer{
@@ -16,10 +19,59 @@
     justify-content: space-between;
     /* Provisional */
 }
-.delete-icon{
+.icons-wrapper{
+    display: flex;
+    gap: 1rem;
+}
+.icons{
     font-size: 1.8rem;
     cursor: pointer;
 }
 .title{
-    margin-bottom: 0;
+    margin: 0;
 }
+.description{
+    display: none;
+}
+
+/* Relacionado con el modal */
+.modal-container{
+    padding: 1rem;
+    min-height: 600px;
+    position: relative;
+}
+.modal-container .title{
+    text-align: center;
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-family: 'Comic Neue', cursive;
+    
+}
+.modal-container .description{
+    display: block;
+    text-align: left;
+    line-height: 32px;
+    font-size: 20px;
+    width: 100%;
+    padding-top: 32px;
+    font-family: 'Comic Neue', cursive;
+    box-sizing: border-box;
+    border: none;
+    resize: none;
+    outline: none;
+    height: 435px !important;
+    font-weight: bolder;
+}
+.modal-container .note-footer{
+    justify-content: center;
+    position: absolute;
+    bottom: 6%;
+    font-size: 1.5rem;
+    font-family: cursive;
+    left: 6%;
+}
+
+
+
+
+.wobble-horizontal-top{animation:wobble-horizontal-top .8s linear both} @keyframes wobble-horizontal-top{0%,100%{transform:translateX(0);transform-origin:50% 50%}15%{transform:translateX(-30px) rotate(6deg)}30%{transform:translateX(15px) rotate(-6deg)}45%{transform:translateX(-15px) rotate(3.6deg)}60%{transform:translateX(9px) rotate(-2.4deg)}75%{transform:translateX(-6px) rotate(1.2deg)}}
