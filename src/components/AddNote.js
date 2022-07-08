@@ -6,7 +6,9 @@ import { useState } from 'react'
 const AddNote = ({ handleAddNote }) => {
 	const [noteText, setNoteText] = useState(''); //texto del textarea
 	const [inputText, setInputText] = useState(''); //texto del input
-	const [classState, setClassState] = useState('note new');
+	const [classState, setClassState] = useState('new');
+	var inputTextStyle = document.querySelector('.inputAddNote');
+
 
 	const handleChange = (event) => {
 		setNoteText(event.target.value);
@@ -23,19 +25,28 @@ const AddNote = ({ handleAddNote }) => {
 			handleAddNote(inputText, noteText)
 			setInputText('');
 			setNoteText('');
-			document.querySelector('.note.new').style.display='none';
+			document.querySelector('.new').style.display='none';
 			document.querySelector('.notes-list').style.display='grid';
+			inputTextStyle.style.border='none';
 		}
 		else{
-			setClassState('note new shake-right')
+			setClassState('new shake-right')
 			setTimeout(()=>{ //necesario para reproducir la animación siempre que demos click y no haya texto
-				setClassState('note new')
+				setClassState('new')
 			},500)
+			if ((inputText.trim().length <= 0)){
+				inputTextStyle.style.border='1px solid red'
+			}
+			else{
+				inputTextStyle.style.border='none'
+			}
 		}
 	}
 	const handleReturn = () => {
-		document.querySelector('.note.new').style.display='none';
+		document.querySelector('.new').style.display='none';
 		document.querySelector('.notes-list').style.display='grid';
+		inputTextStyle.style.border='none';
+
 		setNoteText('');
 		setInputText('');
 	}

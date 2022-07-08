@@ -6,6 +6,12 @@ export default class Modal extends Component {
   render() {
 
     const { children, toggle, active } = this.props;
+    if (active){
+      document.body.style.overflow='hidden';
+    }
+    else{
+      document.body.style.overflow='auto'; // no tiene soporte en safari, hay que buscar otra solución ya que la app se rompe
+    }
     return (
       <Portal>
         {active && (
@@ -21,14 +27,13 @@ export default class Modal extends Component {
     )
   }
 }
-
 const styles = {
     wrapper:{
-        position: 'absolute',
+        position: 'fixed',
         top: 0,
         left: 0,
-        width: '100%',
-        height: '100vh',
+        bottom:0,
+        right: 0,
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
@@ -52,9 +57,7 @@ const styles = {
     },
     background:{
         width: '100%',
-        minHeight: '100vh',
-        top: 0,
-        left: 0,
+        height: '100%',
         background: '#000',
         opacity: 0.4,
         position: 'absolute',

@@ -1,0 +1,9 @@
+:root{
+    --backgroundBody: #0f0e17;
+    --backgroudnCuaderno: repeating-linear-gradient(#f1ede9, #f1ede9 31px, #94acd4 31px, #94acd4 32px);
+    --backgroundNotes: #fee765;
+    --colorTextNotes: #272343;
+    --black: #000;
+    --white: #fff;
+
+}

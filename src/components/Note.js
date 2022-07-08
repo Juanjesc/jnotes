@@ -9,7 +9,7 @@ const Note = ({ id, text, date, handleDeleteNote, title }) => {
 		setActive(!active);
 	}
   return (
-    <div className="note">
+    <div className="note box">
       <h3 className='title' >{title}</h3>
       <span className='description'>{text}</span>
       <div className="note-footer">

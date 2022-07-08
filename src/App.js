@@ -54,7 +54,7 @@ const App = () => {
         />
       <NoteList 
         notes={notes.filter((noteText) => 
-          noteText.text.toLowerCase().includes(searchText)
+          noteText.title.toLowerCase().includes(searchText)
         )}
         handleAddNote={addNote}
         handleDeleteNote={deleteNote}

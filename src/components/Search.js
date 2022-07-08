@@ -8,7 +8,7 @@ const Search = ({ handleSearchNote, setShowNote }) => {
 	const handleShowAddNote = () => {
 		/* En los estilos por defecto, addnotes tiene display none */
 		if (setShowNote){ 
-			let addNote = document.querySelector('.note.new');
+			let addNote = document.querySelector('.new');
 			addNote.classList.add('wobble-horizontal-top')
 			addNote.style.display='flex';
 			document.querySelector('.notes-list').style.display='none';

@@ -1,4 +1,8 @@
+@import './styles/root.css';
 
+body{
+    background-color: var(--backgroundBody);
+}
 .container{
     max-width: 940px;
     margin: 0 auto;

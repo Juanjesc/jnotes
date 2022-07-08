@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&display=swap');
+@import './root.css';
 .note{
-    background-color: #fef68a;
+    background-color: var(--backgroundNotes);
     margin-bottom: 10px;
     border-radius: 10px;
     padding: 1rem;
@@ -11,7 +12,63 @@
     white-space: pre-wrap;
     position: relative;
     z-index: 1;
+    background: #ffe259;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #ffa751, #ffe259);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #ffa751, #ffe259); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    
+    
+
+
 }
+.note:nth-child(even){
+    background-image: url('../img/papel2.jpg');
+}
+.note:nth-child(odd){
+    background-image: url('../img/papel.jpg');
+}
+
+.note:hover{
+    animation:vibrate .2s linear both
+}
+
+
+ @keyframes vibrate{0%{transform:translate(0)}20%{transform:translate(-2px,2px)}40%{transform:translate(-2px,-2px)}60%{transform:translate(2px,2px)}80%{transform:translate(2px,-2px)}100%{transform:translate(0)}}
+
+
+.box:before {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(-45deg, #e81cff 0%, #40c9ff 100% );
+    transform: translate3d(0px, 0px, 0) scale(1.03);
+    filter: blur(10px);
+    opacity: var(0.7);
+    transition: opacity 0.3s;
+    border-radius: inherit;
+}
+
+/* 
+* Prevents issues when the parent creates a 
+* stacking context. (For example, using the transform
+* property )
+*/
+.box::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: inherit;
+    border-radius: inherit;
+}
+
 
 .note-footer{
     display: flex;
@@ -29,6 +86,8 @@
 }
 .title{
     margin: 0;
+    font-family: 'Comic Neue', cursive;
+    text-transform: capitalize;
 }
 .description{
     display: none;
@@ -70,8 +129,4 @@
     font-family: cursive;
     left: 6%;
 }
-
-
-
-
 .wobble-horizontal-top{animation:wobble-horizontal-top .8s linear both} @keyframes wobble-horizontal-top{0%,100%{transform:translateX(0);transform-origin:50% 50%}15%{transform:translateX(-30px) rotate(6deg)}30%{transform:translateX(15px) rotate(-6deg)}45%{transform:translateX(-15px) rotate(3.6deg)}60%{transform:translateX(9px) rotate(-2.4deg)}75%{transform:translateX(-6px) rotate(1.2deg)}}

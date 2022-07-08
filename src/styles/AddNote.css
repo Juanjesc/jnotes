@@ -1,4 +1,4 @@
-.note.new{
+.new{
     background-color: #67d7cc;
     background: repeating-linear-gradient(#f1ede9, #f1ede9 31px, #94acd4 31px, #94acd4 32px);
     min-height: 500px;
@@ -6,6 +6,17 @@
     margin: 0 auto;
     display: none;
     position: relative;
+
+    /*en  pruebas*/
+
+   
+    border-radius: 10px;
+    padding: 1rem;
+    flex-direction: column;
+    justify-content: space-around;
+    white-space: pre-wrap;
+    position: relative;
+    z-index: 1;
     
     
 }
