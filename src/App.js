@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { nanoid } from 'nanoid';
-import NoteList from "./components/NoteList";
 import './App.css';
 import Search from "./components/Search";
 import Header from "./components/Header";
+import Pagination from "./components/Pagination";
 
 const App = () => {
   const [notes, setNotes] = useState([]);
@@ -41,6 +41,7 @@ const App = () => {
       setNotes(notesUpdated);
     }
   }
+  
   return (
     <div className={darkMode ? 'dark-mode' : ''}>
 
@@ -52,13 +53,12 @@ const App = () => {
         handleSearchNote={setSearchText}
         setShowNote={setShowNote}
         />
-      <NoteList 
-        notes={notes.filter((noteText) => 
-          noteText.title.toLowerCase().includes(searchText)
-        )}
+      <Pagination 
+        data={notes} 
         handleAddNote={addNote}
         handleDeleteNote={deleteNote}
-      />
+        searchText={searchText}
+        />
     </div>
     </div>
   )

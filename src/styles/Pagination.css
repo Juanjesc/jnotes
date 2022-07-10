@@ -1,0 +1,76 @@
+.pagination{
+    display: flex;
+    gap: 1rem;
+    list-style-type: none;
+    justify-content: center;
+
+    
+    align-items: center;
+    position: absolute;
+    padding-left: 0;
+    padding-right: 0;
+    
+    
+}
+.pagination-wrapper{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0 4rem 0;
+    padding-bottom: 2rem;
+   
+}
+@media (min-width: 768px) { 
+    .pagination{
+        position: fixed;
+        bottom: 100px;
+        gap: 2rem;  
+    }
+    .pagination-wrapper{
+        margin: 4rem 0;
+    }
+
+}
+.page-num{
+    color: white;
+    cursor: pointer;
+    padding: 1rem;
+
+}
+.activee{
+    border-radius: 25px;
+    position: relative;
+}
+
+.boxx:before {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(-45deg, #e81cff 0%, #40c9ff 100% );
+    transform: translate3d(0px, 20px, 0) scale(0.95);
+    filter: blur(20px);
+    opacity: var(0.7);
+    transition: opacity 0.3s;
+    border-radius: inherit;
+}
+
+/* 
+* Prevents issues when the parent creates a 
+* stacking context. (For example, using the transform
+* property )
+*/
+.boxx::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: inherit;
+    border-radius: inherit;
+}

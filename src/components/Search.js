@@ -12,15 +12,10 @@ const Search = ({ handleSearchNote, setShowNote }) => {
 			addNote.classList.add('wobble-horizontal-top')
 			addNote.style.display='flex';
 			document.querySelector('.notes-list').style.display='none';
+			document.querySelector('.pagination').style.display='none'; 
+			/* Línea 15 produce fallo por consola si no hay notas, ya que la paginación no estaría creada aún.
+			En cuanto se crea 1 nota, la paginación se crea también, y el error ya no vuelve a aparecer. */
 		}
-		/* Pendiente este bloque de código entre comentarios, de momento funciona la app y esto sobra */
-		// else{ //Si es true muestra la nota
-			
-		// 	document.querySelector('.note.new').style.display='flex';
-		// 	document.querySelector('.notes-list').style.display='none';
-			
-		// }
-	
 	}
   return (
 		<div className='search'>

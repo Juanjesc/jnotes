@@ -28,6 +28,7 @@ const AddNote = ({ handleAddNote }) => {
 			document.querySelector('.new').style.display='none';
 			document.querySelector('.notes-list').style.display='grid';
 			inputTextStyle.style.border='none';
+			document.querySelector('.pagination').style.display='flex';
 		}
 		else{
 			setClassState('new shake-right')
@@ -46,6 +47,7 @@ const AddNote = ({ handleAddNote }) => {
 		document.querySelector('.new').style.display='none';
 		document.querySelector('.notes-list').style.display='grid';
 		inputTextStyle.style.border='none';
+		document.querySelector('.pagination').style.display='flex';
 
 		setNoteText('');
 		setInputText('');
