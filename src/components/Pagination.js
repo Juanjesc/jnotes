@@ -11,6 +11,7 @@ const Pagination = (props) => {
   // We start with an empty list of items.
   const [currentItems, setCurrentItems] = useState([]);
   const [pageCount, setPageCount] = useState(0);
+  const [page, setPage] = useState(0);
   // Here we use item offsets; we could also use page offsets
   // following the API or data you're working with.
   const [itemOffset, setItemOffset] = useState(0);
@@ -31,15 +32,22 @@ const Pagination = (props) => {
     `User requested page number ${event.selected}, which is offset ${newOffset}`
   );
   setItemOffset(newOffset);
+  setPage(event.selected)
   };
+  useEffect(()=>{
+
+    if(searchText){
+      setItemOffset(0);
+      setPage(0);
+
+    }
+  },[searchText])
 
   return (
     <>
       <NoteList 
       
-        notes={currentItems.filter((noteText) => 
-          noteText.title.toLowerCase().includes(searchText)
-        )}
+        notes={currentItems}
         handleAddNote={handleAddNote}
         handleDeleteNote={handleDeleteNote}
       />
@@ -53,6 +61,7 @@ const Pagination = (props) => {
         onPageChange={handlePageClick}
         pageRangeDisplayed={3}
         pageCount={pageCount}
+        forcePage={page}
         previousLabel={<MdSkipPrevious 
           className='icons'
         />}

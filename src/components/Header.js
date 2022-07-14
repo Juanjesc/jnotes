@@ -1,13 +1,13 @@
 import '../styles/Header.css';
-const Header = ({ handleToggleTheme }) => {
+import logotype from  '../img/Logo.png';
+const Header = () => {
   return (
     <div>
 			<header className="header">
-				<h1 className="title">Notes</h1>
-				<button 
-					className="toggle-btn"
-					onClick={() => handleToggleTheme((previousDarkMode) => !previousDarkMode)}
-					>Toogle</button>
+				<div className="logo-wrapper">
+					<img src={logotype} alt="logo" />
+				</div>
+				
 			</header>
 		</div>
   )

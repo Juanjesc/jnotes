@@ -2,7 +2,7 @@
     background-color: #67d7cc;
     background: repeating-linear-gradient(#f1ede9, #f1ede9 31px, #94acd4 31px, #94acd4 32px);
     min-height: 500px;
-    width: 60%;
+    width: 90%;
     margin: 0 auto;
     display: none;
     position: relative;
@@ -62,8 +62,7 @@ textarea{
     box-sizing: border-box;
     position: absolute;
     top: 1.5rem;
-    left: 1.25rem;
-    right: 1.25rem;
+    width: 90%;
 }
 .inputAddNote::placeholder{
     color: rgb(60, 60, 60);
@@ -100,3 +99,13 @@ textarea{
     }
 }
 .wobble-horizontal-top{animation:wobble-horizontal-top .8s linear both} @keyframes wobble-horizontal-top{0%,100%{transform:translateX(0);transform-origin:50% 50%}15%{transform:translateX(-30px) rotate(6deg)}30%{transform:translateX(15px) rotate(-6deg)}45%{transform:translateX(-15px) rotate(3.6deg)}60%{transform:translateX(9px) rotate(-2.4deg)}75%{transform:translateX(-6px) rotate(1.2deg)}}
+
+@media (min-width: 768px) { 
+    .new{
+        width: 620px;
+        /*en  pruebas*/
+    }
+    .inputAddNote{
+        width: 620px
+    }
+}

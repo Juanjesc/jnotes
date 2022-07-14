@@ -9,31 +9,41 @@ const Search = ({ handleSearchNote, setShowNote }) => {
 		/* En los estilos por defecto, addnotes tiene display none */
 		if (setShowNote){ 
 			let addNote = document.querySelector('.new');
+			let img_initial = document.querySelector('.notes-empty-img');
+
+			if (img_initial != null){ //esta condición es para evitar un error
+				img_initial.style.display='none'
+			}
 			addNote.classList.add('wobble-horizontal-top')
 			addNote.style.display='flex';
 			document.querySelector('.notes-list').style.display='none';
-			document.querySelector('.pagination').style.display='none'; 
+
+			if (document.querySelector('.pagination') != null){
+				document.querySelector('.pagination').style.display='none'; 
+
+			}
 			/* Línea 15 produce fallo por consola si no hay notas, ya que la paginación no estaría creada aún.
 			En cuanto se crea 1 nota, la paginación se crea también, y el error ya no vuelve a aparecer. */
+			
 		}
 	}
   return (
 		<div className='search'>
-			<div className="input-wrapper">
+			<div className="input-wrapper boxInput">
 				<MdSearch 
 					className='icon search-icon'
 				/> 
 				<input 
 					type="text" 
-					placeholder='¿Qué nota estás buscando?'
+					placeholder='What note are you looking for?'
 					onChange={(event) => handleSearchNote(event.target.value) }
 				/>
 			</div>
-			<div className="btn-wrapper-search">
+			<div className="btn-wrapper-search boxBTN">
 				<button 
 					className='btn-addNote'
 					onClick={handleShowAddNote}>
-					Nueva Nota
+					New Note
 				</button>
 				<MdAdd 
 					className='icon add-icon'

@@ -7,6 +7,25 @@ body{
     max-width: 940px;
     margin: 0 auto;
     padding: 0 15px;
-    min-height: 100vh;
+    /* min-height: 100vh; */
+}
+.notes-empty-img{
+    width: 300px;
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    position: relative;
+    top: 100px;
+}
+.notes-empty-img img{
+    filter: drop-shadow(0 0 40px #00c9a7);
+    max-width: 100%;
+    object-fit: cover;
+}
+@media (min-width: 768px) { 
+    .notes-empty-img{
+        width: 600px;
+    }
 }

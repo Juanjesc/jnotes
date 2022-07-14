@@ -15,6 +15,9 @@
     background: #ffe259;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #ffa751, #ffe259);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #ffa751, #ffe259); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-repeat: no-repeat;
+    background-size: cover;
+    user-select: none;
 
     
     
@@ -129,4 +132,14 @@
     font-family: cursive;
     left: 6%;
 }
-.wobble-horizontal-top{animation:wobble-horizontal-top .8s linear both} @keyframes wobble-horizontal-top{0%,100%{transform:translateX(0);transform-origin:50% 50%}15%{transform:translateX(-30px) rotate(6deg)}30%{transform:translateX(15px) rotate(-6deg)}45%{transform:translateX(-15px) rotate(3.6deg)}60%{transform:translateX(9px) rotate(-2.4deg)}75%{transform:translateX(-6px) rotate(1.2deg)}}
+.wobble-horizontal-top{
+    animation:wobble-horizontal-top .8s linear both;
+    width: 85% !important;
+} 
+@media (min-width: 768px) { 
+    .wobble-horizontal-top{
+        width: 620px !important;
+    }
+}
+
+@keyframes wobble-horizontal-top{0%,100%{transform:translateX(0);transform-origin:50% 50%}15%{transform:translateX(-30px) rotate(6deg)}30%{transform:translateX(15px) rotate(-6deg)}45%{transform:translateX(-15px) rotate(3.6deg)}60%{transform:translateX(9px) rotate(-2.4deg)}75%{transform:translateX(-6px) rotate(1.2deg)}}

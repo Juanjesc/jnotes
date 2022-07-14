@@ -28,7 +28,10 @@ const AddNote = ({ handleAddNote }) => {
 			document.querySelector('.new').style.display='none';
 			document.querySelector('.notes-list').style.display='grid';
 			inputTextStyle.style.border='none';
-			document.querySelector('.pagination').style.display='flex';
+			if (document.querySelector('.pagination') != null){
+				document.querySelector('.pagination').style.display='flex';
+
+			}
 		}
 		else{
 			setClassState('new shake-right')
@@ -44,26 +47,31 @@ const AddNote = ({ handleAddNote }) => {
 		}
 	}
 	const handleReturn = () => {
+		setNoteText('');
+		setInputText('');
 		document.querySelector('.new').style.display='none';
 		document.querySelector('.notes-list').style.display='grid';
 		inputTextStyle.style.border='none';
-		document.querySelector('.pagination').style.display='flex';
+		if (document.querySelector('.pagination') != null){
+			document.querySelector('.pagination').style.display='flex';
+		}
+		if (document.querySelector('.notes-empty-img') !=null){
 
-		setNoteText('');
-		setInputText('');
+			document.querySelector('.notes-empty-img').style.display='flex';
+		}
 	}
 	return (
 		<div className={classState}>
 			<input 
 				type="text" 
-				placeholder='Título de la nota (max. 50 caracteres)'
+				placeholder='Title of the note (max. 50 characters)'
 				className='inputAddNote'
 				value={inputText}
 				onChange={handleChangeinput}
 				maxLength={50}
 			/>
 			<textarea 
-				placeholder='¿Qué quieres apuntar? Puedes arrastrar código'
+				placeholder='What do you want to note? You can also drag code'
 				value={noteText}
 				onChange={handleChange}>
 			</textarea>

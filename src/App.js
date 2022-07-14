@@ -4,13 +4,15 @@ import './App.css';
 import Search from "./components/Search";
 import Header from "./components/Header";
 import Pagination from "./components/Pagination";
+import srcImage from './img/paper.png';
+import Footer from "./components/Footer";
 
 const App = () => {
   const [notes, setNotes] = useState([]);
   const [searchText, setSearchText] = useState('');
-   const [darkMode, setDarkMode] = useState(false); //cambia el template de la app
-   //Se encarga de mostrar la nota para escribir 
-   const [showNote, setShowNote] = useState(true); //eslint-disable-line
+
+  //Se encarga de mostrar la nota para escribir 
+  const [showNote, setShowNote] = useState(true); //eslint-disable-line
   useEffect(() => {
     const saveNotes = JSON.parse(localStorage.getItem('notes-data'));
     if (saveNotes){
@@ -41,26 +43,32 @@ const App = () => {
       setNotes(notesUpdated);
     }
   }
+  const filterNotes = notes.filter((noteText) => noteText.title.toLowerCase().includes(searchText));
   
   return (
-    <div className={darkMode ? 'dark-mode' : ''}>
+    <>
 
     <div className="container">
-      <Header 
-        handleToggleTheme={setDarkMode}
-      />
+      <Header />
       <Search 
         handleSearchNote={setSearchText}
         setShowNote={setShowNote}
         />
+ 
+      {notes.length===0 && 
+        <div className="notes-empty-img">
+          <img src={srcImage} alt="paperImg" />
+        </div>
+      }
       <Pagination 
-        data={notes} 
+        data={filterNotes} 
         handleAddNote={addNote}
         handleDeleteNote={deleteNote}
         searchText={searchText}
         />
+      <Footer />
     </div>
-    </div>
+    </>
   )
 }
 

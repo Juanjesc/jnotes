@@ -1,6 +1,5 @@
 .pagination{
     display: flex;
-    gap: 1rem;
     list-style-type: none;
     justify-content: center;
 
@@ -22,8 +21,7 @@
 }
 @media (min-width: 768px) { 
     .pagination{
-        position: fixed;
-        bottom: 100px;
+        position: relative;
         gap: 2rem;  
     }
     .pagination-wrapper{
