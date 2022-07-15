@@ -37,7 +37,7 @@ const App = () => {
     setNotes(newNotes)
   }
   const deleteNote = (id) => {
-    var response = window.confirm("¿Estás seguro de que deseas eliminar la nota?");
+    var response = window.confirm("Are you sure you want to delete the note?");
     if (response){
       const notesUpdated = notes.filter((note) => note.id !== id)
       setNotes(notesUpdated);

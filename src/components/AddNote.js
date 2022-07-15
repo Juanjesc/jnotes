@@ -14,14 +14,12 @@ const AddNote = ({ handleAddNote }) => {
 		setNoteText(event.target.value);
 	}
 	const handleChangeinput = (event) => {
-		console.log(event.target.value);
 		setInputText(event.target.value);
 	}
 	
 	const handleClick = () => {
 		if ((noteText.trim().length > 0) && (inputText.trim().length > 0)){ //comprueba que la nota tenga texto
-			console.log(noteText)
-			console.log(inputText)
+
 			handleAddNote(inputText, noteText)
 			setInputText('');
 			setNoteText('');

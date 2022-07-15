@@ -22,8 +22,6 @@ const Search = ({ handleSearchNote, setShowNote }) => {
 				document.querySelector('.pagination').style.display='none'; 
 
 			}
-			/* Línea 15 produce fallo por consola si no hay notas, ya que la paginación no estaría creada aún.
-			En cuanto se crea 1 nota, la paginación se crea también, y el error ya no vuelve a aparecer. */
 			
 		}
 	}
