@@ -43,7 +43,8 @@ const App = () => {
       setNotes(notesUpdated);
     }
   }
-  const filterNotes = notes.filter((noteText) => noteText.title.toLowerCase().includes(searchText));
+  const filterNotes = notes.filter((noteText) => noteText.title.toLowerCase().includes(searchText.toLowerCase())); 
+  /* Importante, la línea 46 si se cambian los valores por algún motivo se borran los datos de localStorage */
   
   return (
     <>
