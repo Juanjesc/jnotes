@@ -75,7 +75,7 @@
 
 }
 
- @media (min-width: 668px) { 
+@media (min-width: 668px) { 
     .search{
         flex-direction: row;
         gap: 2.5rem;
@@ -88,7 +88,7 @@
         width: 25%;
     }
 
- }
+}
 
 .boxBTN:before {
 content: "";

@@ -16,6 +16,7 @@ const Search = ({ handleSearchNote, setShowNote }) => {
 			}
 			addNote.classList.add('wobble-horizontal-top')
 			addNote.style.display='flex';
+			document.querySelector('.inputAddNote').focus();
 			document.querySelector('.notes-list').style.display='none';
 
 			if (document.querySelector('.pagination') != null){

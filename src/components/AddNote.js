@@ -75,8 +75,8 @@ const AddNote = ({ handleAddNote }) => {
 			</textarea>
 			<div className='note-footer'>
 				{/* <small>{limiteLetras - noteText.length} Remaining</small> */}
-				<button className='save btn' onClick={handleClick}>Guardar</button>
-				<button className='return btn' onClick={handleReturn}>Volver</button>
+				<button className='save btn' onClick={handleClick}>Save</button>
+				<button className='return btn' onClick={handleReturn}>Go back</button>
 			</div>
 		</div>
 	)
