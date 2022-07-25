@@ -30,7 +30,7 @@
 
 }
 .page-num{
-    color: white;
+    color: white !important;
     cursor: pointer;
     padding: 1rem;
 

@@ -20,7 +20,7 @@ body{
     top: 100px;
 }
 .notes-empty-img img{
-    filter: drop-shadow(0 0 40px #00c9a7);
+    filter: drop-shadow(0 0 .2rem #00c9a7);
     max-width: 100%;
     object-fit: cover;
 }

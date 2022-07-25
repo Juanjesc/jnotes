@@ -29,7 +29,7 @@
 .logo-wrapper img{
     max-width: 100%;
     object-fit: cover;
-    filter: drop-shadow(0px 0px 50px var(--secondary));
+    filter: drop-shadow(0px 0px .2rem var(--secondary));
    
 }
 @media (min-width: 769px) { 

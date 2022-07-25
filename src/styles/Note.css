@@ -85,6 +85,11 @@
 }
 .icons{
     font-size: 1.8rem;
+    cursor: pointer;  
+}
+.icon-note{
+    color: #222222;
+    font-size: 1.7rem;
     cursor: pointer;
 }
 .title{

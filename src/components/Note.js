@@ -16,11 +16,11 @@ const Note = ({ id, text, date, handleDeleteNote, title }) => {
         <small>{date}</small>
         <div className="icons-wrapper">
           <MdRemoveRedEye 
-            className='icons'
+            className='icon-note'
             onClick={toggle}
           />
           <MdDeleteForever 
-            className='icons'
+            className='icon-note'
             onClick={() => handleDeleteNote(id)}
           />
         </div>

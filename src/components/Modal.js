@@ -10,7 +10,7 @@ export default class Modal extends Component {
       document.body.style.overflow='hidden';
     }
     else{
-      document.body.style.overflow='auto'; // no tiene soporte en safari, hay que buscar otra solución ya que la app se rompe
+      document.body.style.overflow='auto'; // no tiene soporte en safari, puede dar fallos
     }
     return (
       <Portal>

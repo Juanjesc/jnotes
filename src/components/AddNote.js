@@ -7,7 +7,7 @@ const AddNote = ({ handleAddNote }) => {
 	const [noteText, setNoteText] = useState(''); //texto del textarea
 	const [inputText, setInputText] = useState(''); //texto del input
 	const [classState, setClassState] = useState('new');
-	var inputTextStyle = document.querySelector('.inputAddNote');
+	const inputTextStyle = document.querySelector('.inputAddNote');
 
 
 	const handleChange = (event) => {
