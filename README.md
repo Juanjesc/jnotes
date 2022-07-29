@@ -10,7 +10,6 @@
 - You can create or delete as many notes as you want, additionally when you add a new note you can see the exact date it was created.
 
 - Thanks to its search engine you will be able to filter your notes to find them more quickly.
-Make sure you type in the search engine in lower case, independently of whether the title of your note has been written in capital letters or not.
 
 - The application is designed to display a maximum of 9 notes on screen, but you can still create more! Thanks to its pagination system, you can have as many note pages as you want.
 
