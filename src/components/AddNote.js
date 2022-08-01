@@ -69,7 +69,7 @@ const AddNote = ({ handleAddNote }) => {
 				maxLength={50}
 			/>
 			<textarea 
-				placeholder='What do you want to note? You can also drag code'
+				placeholder='Write your note here'
 				value={noteText}
 				onChange={handleChange}>
 			</textarea>
